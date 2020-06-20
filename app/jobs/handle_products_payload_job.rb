@@ -2,7 +2,7 @@
 
 # HandleProductsPayloadJob
 class HandleProductsPayloadJob < ApplicationJob
-  include Sidekiq::Worker
+  queue_as :default
 
   def perform(products)
     products.each do |product|
