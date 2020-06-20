@@ -12,14 +12,14 @@ let requestsChart = () => {
 
     // The data for our dataset
     data: {
-      labels: ['Failures', 'Successes'],
+      labels: ['Successes', 'Failures'],
       datasets: [{
         backgroundColor: [
-          '#fb5454',
-          '#008F39'
+          '#008F39',
+          '#fb5454'
         ],
         borderColor: 'none',
-        data: [failures, success]
+        data: [success, failures]
       }]
     },
 
