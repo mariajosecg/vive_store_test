@@ -1,6 +1,4 @@
 require 'sidekiq'
-require 'autoscaler/sidekiq'
-require 'autoscaler/heroku_scaler'
 
 heroku = nil
 if ENV['HEROKU_APP']
