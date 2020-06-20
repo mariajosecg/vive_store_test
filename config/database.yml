@@ -25,4 +25,4 @@ test:
 
 production:
   <<: *default
-  database: ViveProduction
+  url: <%= ENV['DATABASE_URL'] %>
