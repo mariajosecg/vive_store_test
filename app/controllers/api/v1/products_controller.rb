@@ -7,30 +7,34 @@ module Api
     # class ProductsController
     class ProductsController < BaseApiController
       before_action :validate_data
-      
+
       def create
-        HandleProductsPayloadJob.perform_later(products_params)
+        HandleProductsPayloadJob.perform_later(permit_params)
+     
         render_success
       end
 
       private
 
-      def products_params
+      def permit_params
         params[:_json].map do |product|
           product.permit(
             :name,
             :description,
             {
-              variants: [:name, :price]
+              variants: %i[name price]
             }
           )
         end
       end
 
       def validate_data
-        render_error('Data not found') unless params[:_json]
+        begin
+          render_error('Data not found') unless params[:_json].any?
+        rescue ActionDispatch::Http::Parameters::ParseError
+          render_error('Incorrect JSON format')
+        end 
       end
-
     end
   end
 end

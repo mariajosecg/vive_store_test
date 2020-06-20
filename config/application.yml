@@ -10,10 +10,8 @@
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
-REDIS_DB: 0
-REDIS_URL: redis://127.0.0.1
-REDIS_PORT: 6379
+production:
+  redistogo_url: redis://redistogo:ba1f913c8ba3011e00832f729f991aa1@hammerjaw.redistogo.com:11198/
 
-SENTINEL_URL: redis://sentinel-master/1
-SENTINEL_HOSTS: sentinel-slave-1 sentinel-slave-2 sentinel-slave-3
-SENTINEL_PORT: 26379
+development:
+  redistogo_url: redis://127.0.0.1:6379/0

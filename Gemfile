@@ -29,7 +29,6 @@ gem 'redis'
 gem 'redis-namespace'
 gem 'redis-rails'
 gem 'sidekiq', '~> 5.2.8'
-gem 'autoscaler'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
