@@ -12,4 +12,4 @@
 
 # you can override concurrency based on environment
 production:
-  :concurrency: 25
+  :concurrency: 3
