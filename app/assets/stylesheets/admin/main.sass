@@ -1,0 +1,24 @@
+.container
+  .card
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16)
+    border-radius: 8px
+
+.all-requests
+  grid-area: all-requests
+.success-requests
+  grid-area: success-requests
+  .card
+    min-height: 100%
+.failed-requests
+  grid-area: failed-requests
+.requests-chart
+  grid-area: requests-chart
+  .card
+    min-height: 100%
+
+.grid-container
+  display: grid
+  grid-template-areas: 'all-requests requests-chart requests-chart' 'success-requests requests-chart requests-chart' 'failed-requests . .'
+  grid-gap: 2rem 3rem
+  grid-auto-rows: 1fr
+  grid-auto-columns: 1fr

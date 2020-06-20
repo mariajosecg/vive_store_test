@@ -1,7 +1,7 @@
 #product_view.row.container.mx-auto.py-5
   .col
     h4.font-weight-bold.mb-4= @product.name
-    p.text-muted= @product.description
+    p.semi-bold.text-muted= @product.description
     = image_tag 'frontend/images-1.svg', class: 'mx-auto w-50 border-bottom'
   .col
     h5.font-weight-bold.mb-4 Variants
@@ -12,7 +12,7 @@
             th Name
             th Price
         tbody
-          - 10.times do
+          - @product.variants.each do |variant|
             tr
-              td Variant one
-              td 10.00
+              td= variant.name
+              td= variant.price

@@ -1,0 +1,27 @@
+.container.row.mx-auto.py-5.grid-container
+  .all-requests
+    .card.border-0
+      .card-header.d-flex.align-items-center.py-3.bg-white.border-0
+        = image_tag 'admin/request.svg', width: '10%', height: '15%'
+        h6.ml-3.mb-0.font-weight-bold.text-purple Products requested for loading
+      .card-footer.py-5.bg-white.mx-3
+        h2.text-center.semi-bold= @all_requests
+  .success-requests
+    .card.border-0
+      .card-header.d-flex.align-items-center.py-3.bg-white.border-0
+        = image_tag 'admin/success.svg', width: '10%', height: '15%'
+        h6.ml-3.mb-0.font-weight-bold.text-purple Loaded products
+      .card-footer.py-5.bg-white.mx-3
+        h2.text-center.semi-bold= @success_requests
+  .failed-requests
+    .card.border-0
+      .card-header.d-flex.align-items-center.py-3.bg-white.border-0
+        = image_tag 'admin/fail.svg', width: '10%', height: '15%'
+        h6.ml-3.mb-0.font-weight-bold.text-purple Unloaded products
+      .card-footer.py-5.bg-white.mx-3
+        h2.text-center.semi-bold= @failed_requests
+  .requests-chart
+    .card.border-0.px-3.pb-3
+      .card-header.d-flex.align-items-center.py-3.bg-white.border-0
+        h6.ml-3.mb-0.font-weight-bold.text-purple.pt-2 Gráfica de solicitudes
+      canvas#requestsChart.mt-4 data-failures=@failed_requests data-success=@success_requests
