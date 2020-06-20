@@ -6,7 +6,7 @@ class HandleProductsPayloadJob < ApplicationJob
 
   def perform(products)
     products.each do |product|
-      ProductCreatorJob.perform_async(product)
+      ProductCreatorJob.perform_later(product)
     end
   end
 end

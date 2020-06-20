@@ -9,7 +9,7 @@ module Api
       before_action :validate_data
       
       def create
-        HandleProductsPayloadJob.perform_async(products_params)
+        HandleProductsPayloadJob.perform_later(products_params)
         render_success
       end
 
