@@ -18,10 +18,10 @@ end
 Sidekiq.configure_server do |config|
   config.server_middleware do |chain|
     if heroku
-      p "[Sidekiq] Running on Heroku, autoscaler is used"
+      puts "[Sidekiq] Running on Heroku, autoscaler is used"
       chain.add(Autoscaler::Sidekiq::Server, heroku, 60) # 60 seconds timeout
     else
-      p "[Sidekiq] Running locally, so autoscaler isn't used"
+      puts "[Sidekiq] Running locally, so autoscaler isn't used"
     end
   end
 end
