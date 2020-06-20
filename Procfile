@@ -1,2 +1,2 @@
-web: bin/rails server -p ${PORT:-5000} -e $RAILS_ENV
-worker: bundle exec sidekiq -e production -c 2 -q default
+web: bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}
+worker: bundle exec sidekiq -c 3
