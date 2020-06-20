@@ -2,7 +2,7 @@
 
 # ProductCreatorJob
 class ProductCreatorJob < ApplicationJob
-  queue_as :default
+  include Sidekiq::Worker
 
   def perform(product)
     execute do

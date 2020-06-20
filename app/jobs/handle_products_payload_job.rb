@@ -2,11 +2,11 @@
 
 # HandleProductsPayloadJob
 class HandleProductsPayloadJob < ApplicationJob
-  queue_as :default
+  include Sidekiq::Worker
 
   def perform(products)
     products.each do |product|
-      ProductCreatorJob.perform_later(product)
+      ProductCreatorJob.perform_async(product)
     end
   end
 end
