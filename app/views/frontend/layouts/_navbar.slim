@@ -1,0 +1,11 @@
+nav.navbar.bg-sky.py-3
+  .col.d-flex.align-items-center
+    = image_tag 'frontend/search.svg', width: '4%', class: 'ml-3'
+    input.form-control.semi-bold.border-0.bg-sky.pl-1 type='text' placeholder='Search' name="search" autocomplete='off'
+  .col.text-center
+  	a.w-100.d-flex.justify-content-center.logo href=products_path
+	    = image_tag 'frontend/vive.png', width: '15%', height: '15%'
+	    p.font-weight-bold.mb-0.text-purple .STORE
+  .col.text-right
+    = image_tag 'frontend/heart.svg', width: '6%', class: 'mr-5'
+    = image_tag 'frontend/bag.svg', width: '6%'
