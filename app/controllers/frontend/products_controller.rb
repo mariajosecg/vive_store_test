@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-# module Api
+# module Frontend
 module Frontend
   # class ProductsController
   class ProductsController < BaseController
     def index
-      @products = Product.all.page params[:page]
+      @products = Product.all.page(params[:page]).per(20)
     end
 
     def show
