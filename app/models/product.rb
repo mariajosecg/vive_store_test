@@ -2,6 +2,7 @@
 
 # class Product
 class Product < ApplicationRecord
+	paginates_per 20
   before_validation :sanitize_variants, if: -> { variants.any? }
   validates_presence_of :name, :description, :variants
   has_many :variants, dependent: :destroy

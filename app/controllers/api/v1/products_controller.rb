@@ -29,7 +29,7 @@ module Api
       end
 
       def validate_data
-        unless params[:_json] || params[:_json].any?
+        unless params[:_json].present? || params[:_json].any?
           render_error('Data not found')
         end
       end

@@ -5,7 +5,7 @@ module Frontend
   # class ProductsController
   class ProductsController < BaseController
     def index
-      @products = Product.all
+      @products = Product.all.page params[:page]
     end
 
     def show

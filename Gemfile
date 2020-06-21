@@ -25,11 +25,15 @@ gem 'slim', '~> 4.0.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Jobs
 gem 'redis'
 gem 'redis-namespace'
 gem 'redis-rails'
 gem 'sidekiq', '~> 5.2.8'
 
+# Pagination
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

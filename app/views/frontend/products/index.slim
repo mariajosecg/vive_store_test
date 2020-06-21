@@ -11,6 +11,8 @@
                 = product.name
             .mask
             = image_tag 'frontend/heart.svg', width: '12%', class: :heart
+    .container.mx-auto.w-100
+      = paginate @products, theme: 'twitter-bootstrap-4'
   - else
     .col.py-5
       h5.semi-bold.text-center 
