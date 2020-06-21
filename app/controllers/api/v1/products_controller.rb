@@ -10,7 +10,7 @@ module Api
 
       def create
         HandleProductsPayloadJob.perform_later(permit_params)
-     
+
         render_success
       end
 
@@ -29,11 +29,9 @@ module Api
       end
 
       def validate_data
-        begin
-          render_error('Data not found') unless params[:_json].any?
-        rescue ActionDispatch::Http::Parameters::ParseError
-          render_error('Incorrect JSON format')
-        end 
+        unless params[:_json] || params[:_json].any?
+          render_error('Data not found')
+        end
       end
     end
   end

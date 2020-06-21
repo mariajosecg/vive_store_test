@@ -6,6 +6,8 @@ class HandleProductsPayloadJob < ApplicationJob
 
   def perform(products)
     products.each do |product|
+      next if product.blank?
+    
       ProductCreatorJob.perform_later(product)
     end
   end
