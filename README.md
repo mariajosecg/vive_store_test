@@ -29,31 +29,31 @@ Instalar dependencias:
 bundle install
 ```
 
-una vez hecho esto, proceda a levantar el entorno de desarrollo para probar la aplicación:
+Una vez hecho esto, proceda a levantar el entorno de desarrollo para probar la aplicación:
 
 ```
 rails server
 ```
 
-iniciciar servidor de [sidekiq](https://github.com/mperham/sidekiq) para ejecutar procesos en segundo plano:
+Iniciar servidor de [sidekiq](https://github.com/mperham/sidekiq) para ejecutar procesos en segundo plano:
 
 ```
 bundle exec sidekiq
 ```
 
-iniciar servidor de redis:
+Iniciar servidor de redis:
 
 ```
 redis-server
 ```
 
-# Nota: Si aún no tiene redis instalado en su entorno local, puede hacerlo siguiendo  los pasos del siguiente [enlace](https://www.comoinstalarlinux.com/como-instalar-redis-en-ubuntu-16-04/)
+#### Nota: Si aún no tiene redis instalado en su entorno local, puede hacerlo siguiendo  los pasos del siguiente [enlace](https://www.comoinstalarlinux.com/como-instalar-redis-en-ubuntu-16-04/)
 
-si todo ha salido bien, debería ver la interfaz dónde se listaran los productos cargados a través del API
+Si todo ha salido bien, debería ver la interfaz dónde se listaran los productos cargados a través del API.
 
 ![Home](https://i.ibb.co/80yj97Q/image.png)
 
-Vive Store provee un [dashboard](http://vive-store.herokuapp.com/admin/dashboard) para observar la cantidad de productos que han sido solicitados para cargar a través del API y cuántos de ellos han sido cargados exitosamente y cuántos no.
+Vive Store provee un [Dashboard](http://vive-store.herokuapp.com/admin/dashboard) para observar la cantidad de productos que han sido solicitados para cargar a través del API, y cuántos de ellos han sido cargados exitosamente y cuántos no.
 
 ![Dashboard](https://i.ibb.co/YLF5pMs/image.png)
 
