@@ -9,14 +9,14 @@ module Api
       before_action :validate_data
 
       def create
-        HandleProductsPayloadJob.perform_later(permit_params)
+        HandleProductsPayloadJob.perform_later(permited_params)
 
         render_success
       end
 
       private
 
-      def permit_params
+      def permited_params
         params[:_json].map do |product|
           product.permit(
             :name,

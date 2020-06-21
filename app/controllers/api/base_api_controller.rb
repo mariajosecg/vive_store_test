@@ -9,7 +9,7 @@ module Api
 
     def process_action(*args)
       super
-    rescue ActionDispatch::Http::Parameters::ParseError => exception
+    rescue ActionDispatch::Http::Parameters::ParseError
       render_error('Invalid JSON format')
     end
   end
